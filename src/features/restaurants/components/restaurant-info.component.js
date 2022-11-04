@@ -16,7 +16,7 @@ const RestaurantInfo = ({ restaurant = {} }) => {
   return (
     <Card elevation={5} style={styles.card}>
       <Card.Cover key={name} style={styles.cover} source={{ uri: photos[0] }} />
-      <Text>{name}</Text>
+      <Text style={styles.title}>{name}</Text>
     </Card>
   );
 };
@@ -24,6 +24,7 @@ const RestaurantInfo = ({ restaurant = {} }) => {
 const styles = StyleSheet.create({
   card: { backgroundColor: 'white' },
   cover: { padding: 20, backgroundColor: 'white' },
+  title: { padding: 16 },
 });
 
 export default RestaurantInfo;
