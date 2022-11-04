@@ -8,15 +8,25 @@ import {
   Platform,
 } from 'react-native';
 
+import { Searchbar } from 'react-native-paper';
+
 export default function App() {
-  const isAndroid = Platform.OS === 'android';
+  // const isAndroid = Platform.OS === 'android';
+  const [searchQuery, setSearchQuery] = React.useState('');
+
+  const onChangeSearch = (query) => setSearchQuery(query);
+
   return (
     <>
-      <SafeAreaView style={{ flex: 1, marginTop: StatusBar.currentHeight }}>
-        <View>
-          <Text style={{ padding: 16, backgroundColor: 'green' }}>Search</Text>
+      <SafeAreaView style={styles.container}>
+        <View style={styles.search}>
+          <Searchbar
+            placeholder='Search'
+            onChangeText={onChangeSearch}
+            value={searchQuery}
+          />
         </View>
-        <View style={{ flex: 1, padding: 16, backgroundColor: 'blue' }}>
+        <View style={styles.list}>
           <Text>List</Text>
         </View>
       </SafeAreaView>
@@ -26,5 +36,17 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    flex: 1,
+    marginTop: StatusBar.currentHeight,
+  },
+  search: {
+    padding: 16,
+    backgroundColor: 'green',
+  },
+  list: {
+    flex: 1,
+    padding: 16,
+    backgroundColor: 'blue',
+  },
 });
