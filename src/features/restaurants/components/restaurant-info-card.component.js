@@ -7,12 +7,12 @@ const Title = styled(Text)`
 `;
 
 const RestaurantCard = styled(Card)`
-  background-color: 'white';
+  background-color: white;
 `;
 
 const RestaurantCardCover = styled(Card.Cover)`
-  padding: 16px;
-  background-color: 'white';
+  padding: 20px;
+  background-color: white;
 `;
 
 const RestaurantInfoCard = ({ restaurant = {} }) => {
